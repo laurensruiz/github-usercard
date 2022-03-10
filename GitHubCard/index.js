@@ -95,7 +95,7 @@ function gitCard(gitInfo) {
   username.textContent = gitInfo.login; //object key is login in console
   location.textContent = `Location: ${gitInfo.location}`;
   profile.textContent = "Profile: ";
-  profileLink.textContent = "Link to GitHub Profile";
+  profileLink.textContent = gitInfo.html_url;
   profileLink.href = gitInfo.html_url;
   followers.textContent = `Followers: ${gitInfo.followers}`;
   following.textContent = `Following: ${gitInfo.following}`;
