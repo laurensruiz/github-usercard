@@ -90,7 +90,7 @@ function gitCard(gitInfo) {
 
   //content or DATA. Inspect and check object
   img.src = gitInfo.avatar_url;
-  img.alt = "github user";
+  img.alt = "github user"; // .alt needs to describe what image is (remember css!)
   name.textContent = gitInfo.name;
   username.textContent = gitInfo.login; //object key is login in console
   location.textContent = gitInfo.location;
