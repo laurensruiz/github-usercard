@@ -6,20 +6,7 @@ import axios from 'axios';
     https://api.github.com/users/<your name>
 */
 
-const cards = document.querySelector('.cards')
 
-axios.get('https://api.github.com/users/laurensruiz')
-  .then(response => {
-    console.log(response);
-    const data = gitCard(response.data);
-    cards.appendChild(data); // check inspect, all info is under data
-  })
-  .catch(err => {
-    console.error(err);
-  })
-  .finally(() =>{
-    console.log('it\'s working!');
-  })
   
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
@@ -44,6 +31,20 @@ axios.get('https://api.github.com/users/laurensruiz')
     Using that array, iterate over it, requesting data for each user, creating a new card for each
     user, and adding that card to the DOM.
 */
+const cards = document.querySelector('.cards')
+
+axios.get('https://api.github.com/users/laurensruiz')
+  .then(response => {
+    console.log(response);
+    const data = gitCard(response.data);
+    cards.appendChild(data); // check inspect, all info is under data
+  })
+  .catch(err => {
+    console.error(err);
+  })
+  .finally(() =>{
+    console.log('it\'s working!');
+  })
 
 const followersArray = ['tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell'];
 
