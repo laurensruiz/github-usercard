@@ -46,7 +46,7 @@ axios.get('https://api.github.com/users/laurensruiz')
     console.log('it\'s working!');
   })
 
-const followersArray = ['tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell'];
+const followersArray = ['Austin-T-Johnson', 'MaxT6', 'paulMorrow1', 'tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell'];
 
 followersArray.forEach(element =>
   getProfileCard(element)
@@ -93,7 +93,7 @@ function gitCard(gitInfo) {
   img.alt = "github user"; // .alt needs to describe what image is (remember css!)
   name.textContent = gitInfo.name;
   username.textContent = gitInfo.login; //object key is login in console
-  location.textContent = gitInfo.location;
+  location.textContent = `Location: ${gitInfo.location}`;
   profile.textContent = "Profile: ";
   profileLink.textContent = "Link to GitHub Profile";
   profileLink.href = gitInfo.html_url;
@@ -144,3 +144,6 @@ function gitCard(gitInfo) {
     luishrd
     bigknell
 */
+
+//Stretch Link to followers! 
+
