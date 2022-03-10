@@ -10,10 +10,14 @@ const cards = document.querySelector('.cards')
 
 axios.get('https://api.github.com/users/laurensruiz')
   .then(response => {
-    cards.appendChild(gitCard(response.data))
+    console.log(response);
+    cards.appendChild(gitCard(response.data)); // check inspect, all info is under data
   })
   .catch(err => {
-    console.error(err)
+    console.error(err);
+  })
+  .finally(() =>{
+    console.log('it\'s working!');
   })
   
 /*
@@ -49,10 +53,14 @@ followersArray.forEach(element =>
 function getProfileCard(user) {
   axios.get(`https://api.github.com/users/${user}`)
   .then(response => {
-    cards.appendChild(gitCard(response.data))
+    console.log(response);
+    cards.appendChild(gitCard(response.data));
   })
   .catch(err => {
-    console.error(err)
+    console.error(err);
+  })
+  .finally(() =>{
+    console.log('it\'s working!');
   })
 }
 
@@ -77,7 +85,7 @@ function gitCard(gitInfo) {
   name.classList.add('name');
   username.classList.add('username');
 
-  //content
+  //content or DATA. Inspect and check object
   img.src = gitInfo.avatar_url;
   img.alt = "github user";
   name.textContent = gitInfo.name;
