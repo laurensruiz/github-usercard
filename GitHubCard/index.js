@@ -11,7 +11,8 @@ const cards = document.querySelector('.cards')
 axios.get('https://api.github.com/users/laurensruiz')
   .then(response => {
     console.log(response);
-    cards.appendChild(gitCard(response.data)); // check inspect, all info is under data
+    const data = gitCard(response.data);
+    cards.appendChild(data); // check inspect, all info is under data
   })
   .catch(err => {
     console.error(err);
@@ -54,7 +55,8 @@ function getProfileCard(user) {
   axios.get(`https://api.github.com/users/${user}`)
   .then(response => {
     console.log(response);
-    cards.appendChild(gitCard(response.data));
+    const data = gitCard(response.data)
+    cards.appendChild(data);
   })
   .catch(err => {
     console.error(err);
